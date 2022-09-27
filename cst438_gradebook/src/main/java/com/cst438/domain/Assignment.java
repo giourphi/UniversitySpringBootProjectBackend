@@ -25,6 +25,7 @@ public class Assignment {
 	@OneToMany(mappedBy="assignment")
 	private List<AssignmentGrade> assignmentGrades;
 	
+
 	private String name;
 	private Date dueDate;
 	private int needsGrading;  // 0 = false,  1= true (past due date and not all students have grades)
@@ -60,10 +61,19 @@ public class Assignment {
 	public void setCourse(Course course) {
 		this.course = course;
 	}
+	
+	public List<AssignmentGrade> getAssignmentGrades() {
+		return assignmentGrades;
+	}
+	public void setAssignmentGrades(List<AssignmentGrade> assignmentGrades) {
+		this.assignmentGrades = assignmentGrades;
+	}
 	@Override
 	public String toString() {
 		return "Assignment [id=" + id + ", course_id=" + course.getCourse_id() + ", name=" + name + ", dueDate=" + dueDate
 				+ ", needsGrading=" + needsGrading + "]";
 	}
+
+
 	
 }
